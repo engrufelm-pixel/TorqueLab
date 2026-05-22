@@ -19,13 +19,13 @@ const mobilePanel = document.querySelector(".mobile-panel");
 servicesGrid.innerHTML = services
   .map(
     ([title, price, note]) => `
-      <article class="group border border-white/10 bg-night/70 p-6 transition hover:-translate-y-1 hover:border-neon/60 hover:shadow-neon">
-        <div class="mb-7 h-1 w-14 bg-gradient-to-r from-neon to-ember"></div>
-        <h3 class="text-xl font-bold">${title}</h3>
+      <article class="group rounded-xl border border-white/10 bg-night/70 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-neon/60 hover:shadow-neon sm:p-6">
+        <div class="mb-6 h-1 w-14 bg-gradient-to-r from-neon to-ember sm:mb-7"></div>
+        <h3 class="text-lg font-bold text-white sm:text-xl">${title}</h3>
         <p class="mt-3 min-h-12 text-sm leading-6 text-white/55">${note}</p>
-        <div class="mt-7 flex items-center justify-between gap-4">
+        <div class="mt-6 flex items-center justify-between gap-4 sm:mt-7">
           <strong class="text-2xl font-black text-white">${price}</strong>
-          <a class="rounded-md border border-white/10 px-4 py-2 text-sm font-bold text-neon transition group-hover:border-neon" href="#lead">Расчет</a>
+          <a class="rounded-md border border-white/10 px-4 py-2 text-sm font-bold text-neon transition group-hover:border-neon" href="#lead">Расчёт</a>
         </div>
       </article>
     `

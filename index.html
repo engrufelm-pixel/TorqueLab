@@ -35,59 +35,34 @@
       html,
       body {
         max-width: 100%;
-        overflow-x: hidden;
-        background: #f4f8fb;
+        overflow-x: clip;
       }
 
-      body,
-      .text-white,
-      [class*="text-white/"] {
-        color: #101820 !important;
+      main *,
+      section * {
+        min-width: 0;
       }
 
-      [class*="border-white/"] {
-        border-color: rgba(16, 24, 32, 0.12) !important;
+      h1, h2, h3 {
+        overflow-wrap: anywhere;
+        hyphens: auto;
       }
 
-      .bg-night,
-      header {
-        background-color: rgba(244, 248, 251, 0.9) !important;
+      .hero-title {
+        font-size: clamp(2.4rem, 7.2vw, 5.75rem);
+        line-height: 0.98;
+        letter-spacing: -0.025em;
       }
 
-      [class*="bg-panel"],
-      [class*="bg-white/"] {
-        background-color: rgba(255, 255, 255, 0.78) !important;
-      }
-
-      .fixed.inset-0.-z-10 {
-        background: radial-gradient(circle at 18% 12%, rgba(0, 170, 255, 0.16), transparent 30%),
-          radial-gradient(circle at 88% 8%, rgba(255, 106, 26, 0.12), transparent 24%),
-          linear-gradient(135deg, #f4f8fb 0%, #ffffff 55%, #e8eef5 100%) !important;
-      }
-
-      .bg-neon,
-      .bg-ember {
-        color: #05070a !important;
+      .section-title {
+        font-size: clamp(1.9rem, 4.6vw, 3.25rem);
+        line-height: 1.04;
+        letter-spacing: -0.015em;
       }
 
       @media (max-width: 640px) {
-        h1 {
-          font-size: clamp(2.7rem, 13vw, 4rem) !important;
-          line-height: 0.98 !important;
-        }
-
-        h2 {
-          font-size: clamp(2.1rem, 9vw, 3rem) !important;
-          line-height: 1.04 !important;
-        }
-
         section {
           scroll-margin-top: 88px;
-        }
-
-        .lead-form {
-          border-radius: 1.25rem;
-          padding: 1.25rem;
         }
       }
     </style>
@@ -96,125 +71,126 @@
     <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_15%,rgba(0,170,255,.22),transparent_28%),radial-gradient(circle_at_85%_10%,rgba(255,106,26,.18),transparent_24%),linear-gradient(135deg,#05070a_0%,#0d1117_55%,#05070a_100%)]"></div>
 
     <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-night/80 backdrop-blur-xl">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <a href="#" class="text-xl font-black uppercase tracking-[0.18em]">Torque<span class="text-neon">Lab</span></a>
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#" class="text-lg font-black uppercase tracking-[0.18em] sm:text-xl">Torque<span class="text-neon">Lab</span></a>
         <button class="menu-toggle inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/10 md:hidden" aria-label="Открыть меню" aria-expanded="false">
           <span class="h-0.5 w-5 bg-current before:block before:h-0.5 before:w-5 before:-translate-y-1.5 before:bg-current after:block after:h-0.5 after:w-5 after:translate-y-1 after:bg-current"></span>
         </button>
         <div class="nav-menu hidden items-center gap-8 text-sm text-white/68 md:flex">
           <a class="transition hover:text-neon" href="#services">Услуги</a>
           <a class="transition hover:text-neon" href="#trust">Почему мы</a>
-          <a class="transition hover:text-neon" href="#lead">Расчет</a>
+          <a class="transition hover:text-neon" href="#lead">Расчёт</a>
           <a class="rounded-md bg-neon px-5 py-3 font-bold text-black shadow-neon transition hover:bg-white" href="#lead">Оставить заявку</a>
         </div>
       </nav>
-      <div class="mobile-panel hidden border-t border-white/10 bg-night px-5 py-5 md:hidden">
+      <div class="mobile-panel hidden border-t border-white/10 bg-night px-4 py-5 sm:px-6 md:hidden">
         <div class="flex flex-col gap-4 text-sm text-white/75">
           <a href="#services">Услуги</a>
           <a href="#trust">Почему мы</a>
-          <a href="#lead">Расчет</a>
+          <a href="#lead">Расчёт</a>
+          <a href="#lead" class="mt-2 rounded-md bg-neon px-5 py-3 text-center font-bold text-black shadow-neon">Оставить заявку</a>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="relative min-h-screen overflow-hidden pt-28">
-        <img class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.42]" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=2200&q=85" alt="Современный автосервис с автомобилем на подъемнике" />
-        <div class="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/82 to-night/30"></div>
-        <div class="mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
-          <div>
-            <p class="mb-5 text-xs font-bold uppercase tracking-[0.42em] text-neon">Auto service / detailing / b2c</p>
-            <h1 class="max-w-4xl text-5xl font-black leading-[0.96] tracking-tight text-white sm:text-7xl lg:text-8xl">Диагностика и ремонт без сюрпризов по цене.</h1>
-            <p class="mt-7 max-w-2xl text-lg leading-8 text-white/70">Универсальный шаблон для автосервиса, шиномонтажа, детейлинга или любой b2c-услуги. Сильный первый экран, цены, доверие и форма, которая улетает в Telegram.</p>
-            <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-              <a href="#lead" class="rounded-md bg-neon px-8 py-4 text-center font-black text-black shadow-neon transition hover:bg-white">Рассчитать стоимость</a>
-              <a href="#services" class="rounded-md border border-white/15 px-8 py-4 text-center font-bold text-white transition hover:border-ember hover:text-ember">Популярные услуги</a>
+      <section class="relative overflow-hidden pt-24 sm:pt-28">
+        <img class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.38]" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=2200&q=85" alt="Современный автосервис с автомобилем на подъёмнике" />
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-night/70 via-night/85 to-night sm:bg-gradient-to-r sm:from-night sm:via-night/82 sm:to-night/30"></div>
+        <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 sm:gap-12 sm:px-6 sm:py-16 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1.05fr_.95fr] lg:px-8">
+          <div class="min-w-0">
+            <p class="mb-4 text-[11px] font-bold uppercase tracking-[0.38em] text-neon sm:text-xs sm:tracking-[0.42em]">Auto service / detailing / b2c</p>
+            <h1 class="hero-title max-w-4xl font-black tracking-tight text-white">Диагностика и ремонт без сюрпризов по цене.</h1>
+            <p class="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:mt-7 sm:text-lg sm:leading-8">Универсальный шаблон для автосервиса, шиномонтажа, детейлинга или любой b2c-услуги. Сильный первый экран, цены, доверие и форма, которая улетает в Telegram.</p>
+            <div class="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
+              <a href="#lead" class="w-full rounded-md bg-neon px-6 py-4 text-center text-base font-black text-black shadow-neon transition hover:bg-white sm:w-auto sm:px-8">Рассчитать стоимость</a>
+              <a href="#services" class="w-full rounded-md border border-white/15 px-6 py-4 text-center text-base font-bold text-white transition hover:border-ember hover:text-ember sm:w-auto sm:px-8">Популярные услуги</a>
             </div>
           </div>
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            <div class="border border-neon/30 bg-panel/75 p-6 shadow-neon backdrop-blur-xl">
+          <div class="grid gap-3 sm:gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            <div class="rounded-lg border border-neon/30 bg-panel/75 p-5 shadow-neon backdrop-blur-xl sm:p-6">
               <p class="text-sm text-white/55">Среднее время ответа</p>
-              <b class="mt-2 block text-5xl font-black text-neon">5 мин</b>
+              <b class="mt-2 block text-4xl font-black text-neon sm:text-5xl">5 мин</b>
             </div>
-            <div class="border border-white/10 bg-panel/75 p-6 backdrop-blur-xl">
+            <div class="rounded-lg border border-white/10 bg-panel/75 p-5 backdrop-blur-xl sm:p-6">
               <p class="text-sm text-white/55">Гарантия на работы</p>
-              <b class="mt-2 block text-5xl font-black text-white">12 мес</b>
+              <b class="mt-2 block text-4xl font-black text-white sm:text-5xl">12 мес</b>
             </div>
-            <div class="border border-ember/35 bg-panel/75 p-6 shadow-ember backdrop-blur-xl">
+            <div class="rounded-lg border border-ember/35 bg-panel/75 p-5 shadow-ember backdrop-blur-xl sm:p-6">
               <p class="text-sm text-white/55">Прозрачная смета</p>
-              <b class="mt-2 block text-5xl font-black text-ember">до старта</b>
+              <b class="mt-2 block text-3xl font-black text-ember sm:text-4xl">до старта</b>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services" class="border-y border-white/10 bg-white/[0.03] py-24">
-        <div class="mx-auto max-w-7xl px-5 lg:px-8">
-          <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <p class="text-xs font-bold uppercase tracking-[0.38em] text-neon">Services</p>
-              <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Популярные услуги</h2>
+      <section id="services" class="border-y border-white/10 bg-white/[0.03] py-16 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-8 flex flex-col justify-between gap-5 sm:mb-10 sm:gap-6 md:flex-row md:items-end">
+            <div class="min-w-0">
+              <p class="text-[11px] font-bold uppercase tracking-[0.34em] text-neon sm:text-xs sm:tracking-[0.38em]">Services</p>
+              <h2 class="section-title mt-4 font-black tracking-tight text-white">Популярные услуги</h2>
             </div>
             <p class="max-w-xl text-white/58">Цены можно заменить под любую нишу: авто, ремонт техники, клининг, студии, локальные сервисы.</p>
           </div>
-          <div class="services-grid grid gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
+          <div class="services-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
         </div>
       </section>
 
-      <section id="trust" class="py-24">
-        <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
-          <div>
-            <p class="text-xs font-bold uppercase tracking-[0.38em] text-ember">Trust</p>
-            <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Почему клиент оставляет заявку здесь</h2>
+      <section id="trust" class="py-16 sm:py-24">
+        <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
+          <div class="min-w-0">
+            <p class="text-[11px] font-bold uppercase tracking-[0.34em] text-ember sm:text-xs sm:tracking-[0.38em]">Trust</p>
+            <h2 class="section-title mt-4 font-black tracking-tight text-white">Почему клиент оставляет заявку здесь</h2>
           </div>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="border border-white/10 bg-panel/70 p-6">
+          <div class="grid gap-3 sm:gap-4 sm:grid-cols-2">
+            <div class="rounded-lg border border-white/10 bg-panel/70 p-5 sm:p-6">
               <b class="text-2xl text-neon">01</b>
-              <h3 class="mt-5 text-xl font-bold">Понятные сроки</h3>
+              <h3 class="mt-4 text-lg font-bold text-white sm:mt-5 sm:text-xl">Понятные сроки</h3>
               <p class="mt-3 text-sm leading-6 text-white/58">Не обещаем невозможное, фиксируем этапы и держим клиента в курсе.</p>
             </div>
-            <div class="border border-white/10 bg-panel/70 p-6">
+            <div class="rounded-lg border border-white/10 bg-panel/70 p-5 sm:p-6">
               <b class="text-2xl text-neon">02</b>
-              <h3 class="mt-5 text-xl font-bold">Смета до работ</h3>
+              <h3 class="mt-4 text-lg font-bold text-white sm:mt-5 sm:text-xl">Смета до работ</h3>
               <p class="mt-3 text-sm leading-6 text-white/58">Форма собирает ключевые данные, чтобы менеджер быстро дал вилку цены.</p>
             </div>
-            <div class="border border-white/10 bg-panel/70 p-6">
+            <div class="rounded-lg border border-white/10 bg-panel/70 p-5 sm:p-6">
               <b class="text-2xl text-ember">03</b>
-              <h3 class="mt-5 text-xl font-bold">Быстрый контакт</h3>
+              <h3 class="mt-4 text-lg font-bold text-white sm:mt-5 sm:text-xl">Быстрый контакт</h3>
               <p class="mt-3 text-sm leading-6 text-white/58">Заявка прилетает в Telegram владельцу или администратору.</p>
             </div>
-            <div class="border border-white/10 bg-panel/70 p-6">
+            <div class="rounded-lg border border-white/10 bg-panel/70 p-5 sm:p-6">
               <b class="text-2xl text-ember">04</b>
-              <h3 class="mt-5 text-xl font-bold">Адаптивность</h3>
+              <h3 class="mt-4 text-lg font-bold text-white sm:mt-5 sm:text-xl">Адаптивность</h3>
               <p class="mt-3 text-sm leading-6 text-white/58">Первый экран, карточки и форма аккуратно выглядят на телефоне.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="lead" class="border-t border-white/10 bg-panel/65 py-24">
-        <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
-          <div>
-            <p class="text-xs font-bold uppercase tracking-[0.38em] text-neon">Telegram lead</p>
-            <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Оставить заявку на расчет стоимости</h2>
-            <p class="mt-6 text-white/62">Фронт отправляет данные на ваш backend endpoint. Токен Telegram-бота хранится только на сервере.</p>
+      <section id="lead" class="border-t border-white/10 bg-panel/65 py-16 sm:py-24">
+        <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
+          <div class="min-w-0">
+            <p class="text-[11px] font-bold uppercase tracking-[0.34em] text-neon sm:text-xs sm:tracking-[0.38em]">Telegram lead</p>
+            <h2 class="section-title mt-4 font-black tracking-tight text-white">Оставить заявку на расчёт стоимости</h2>
+            <p class="mt-5 text-white/62 sm:mt-6">Фронт отправляет данные на ваш backend endpoint. Токен Telegram-бота хранится только на сервере.</p>
           </div>
-          <form class="lead-form grid gap-4 border border-white/10 bg-night/70 p-5 shadow-neon sm:grid-cols-2" novalidate>
+          <form class="lead-form grid gap-3 rounded-xl border border-white/10 bg-night/70 p-4 shadow-neon sm:gap-4 sm:p-5 sm:grid-cols-2" novalidate>
             <label class="grid gap-2 text-sm text-white/65">
               Имя
-              <input class="rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition placeholder:text-white/30 focus:border-neon" name="name" placeholder="Алексей" required />
+              <input class="rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-base text-white outline-none transition placeholder:text-white/30 focus:border-neon" name="name" placeholder="Алексей" required />
             </label>
             <label class="grid gap-2 text-sm text-white/65">
               Телефон
-              <input class="rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition placeholder:text-white/30 focus:border-neon" name="phone" placeholder="+7 999 000-00-00" required />
+              <input class="rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-base text-white outline-none transition placeholder:text-white/30 focus:border-neon" name="phone" placeholder="+7 999 000-00-00" required />
             </label>
             <label class="grid gap-2 text-sm text-white/65">
               Авто / услуга
-              <input class="rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition placeholder:text-white/30 focus:border-neon" name="car" placeholder="BMW 3, диагностика" required />
+              <input class="rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-base text-white outline-none transition placeholder:text-white/30 focus:border-neon" name="car" placeholder="BMW 3, диагностика" required />
             </label>
             <label class="grid gap-2 text-sm text-white/65">
               Срочность
-              <select class="rounded-md border border-white/10 bg-[#0b0f15] px-4 py-3 text-white outline-none transition focus:border-neon" name="urgency">
+              <select class="rounded-md border border-white/10 bg-[#0b0f15] px-4 py-3 text-base text-white outline-none transition focus:border-neon" name="urgency">
                 <option>Сегодня</option>
                 <option>На этой неделе</option>
                 <option>Просто узнать цену</option>
@@ -222,16 +198,16 @@
             </label>
             <label class="grid gap-2 text-sm text-white/65 sm:col-span-2">
               Комментарий
-              <textarea class="min-h-28 rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition placeholder:text-white/30 focus:border-neon" name="message" placeholder="Что случилось, какие симптомы, удобное время звонка"></textarea>
+              <textarea class="min-h-28 rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-base text-white outline-none transition placeholder:text-white/30 focus:border-neon" name="message" placeholder="Что случилось, какие симптомы, удобное время звонка"></textarea>
             </label>
-            <button class="submit-button rounded-md bg-neon px-6 py-4 font-black text-black transition hover:bg-white sm:col-span-2" type="submit">Отправить в Telegram</button>
+            <button class="submit-button rounded-md bg-neon px-6 py-4 text-base font-black text-black transition hover:bg-white sm:col-span-2" type="submit">Отправить в Telegram</button>
             <p class="form-status hidden text-sm sm:col-span-2" role="status"></p>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="px-5 py-12 lg:px-8">
+    <footer class="px-4 py-12 sm:px-6 lg:px-8">
       <div class="mx-auto flex max-w-7xl flex-col justify-between gap-6 border-t border-white/10 pt-8 text-sm text-white/55 md:flex-row">
         <p>TorqueLab, шаблон для автосервиса и b2c-услуг.</p>
         <p>+7 999 000-00-00 · city@example.ru · Пн-Сб 09:00-20:00</p>
